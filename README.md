@@ -13,7 +13,7 @@
 
 
 ### Overview
-Krya.ai is an innovative orchestration system that empowers you to automate complex tasks on your local machine using the power of Large Language Models (LLMs) like Google Gemini. This initial release focuses on streamlining workflows by generating and executing code, with a sophisticated feedback loop that refines code through error handling and continuous learning.  Think of Krya.ai as your intelligent, automated assistant capable of understanding and executing your instructions directly on your computer.
+Krya.ai is an innovative LLM Automation system that empowers you to automate complex tasks on your local machine using the power of Large Language Models (LLMs) like Google Gemini. This initial release focuses on streamlining workflows by generating and executing code, with a sophisticated feedback loop that refines code through error handling and continuous learning.  Think of Krya.ai as your intelligent, automated assistant capable of understanding and executing your instructions directly on your computer.
 <br>
 
 
@@ -111,6 +111,48 @@ Krya.ai is an innovative orchestration system that empowers you to automate comp
 -   **GUI Automation:**  Automate repetitive tasks such as form filling, software navigation, and more.
 -   **Task Automation:** Automate complex workflows that require both code and UI interactions.
 -   **Personal Assistant:** Use it to automate your day-to-day computer tasks.
+## Project Roadmap
+
+### Understanding the Progression
+
+*   **Phase 1 (Current):** Focused on a single user prompt leading to code generation, local execution, and basic UI automation. This phase has laid the groundwork with core functionality.
+*   **Phase 2: Enhanced Automation & Interaction:** This phase will focus on making the system more robust, versatile, and interactive. We will extend the functionality and add more features.
+*   **Phase 3 and Beyond: Advanced Capabilities & Ecosystem:** We will be exploring new possibilities and build out an ecosystem around Krya.ai with features and integrations.
+
+### Phase 2: Enhanced Automation & Interaction
+
+**Core Improvements:**
+
+1.  **Multi-Prompt Handling:**
+    *   *Description:* Move beyond single-prompt execution. Krya.ai will maintain conversation history, allowing users to interact iteratively with the system.
+    *   *Implementation:* Implement a message history and context management for the LLM, enabling follow-up prompts and dependencies between actions.
+2.  **Enhanced Error Handling & Recovery:**
+    *   *Description:* Improved logging of errors along with automated retry, suggestion and user-driven corrections to handle the errors gracefully.
+    *   *Implementation:* Implement better error catching and feedback mechanisms so that user is alerted when an error occurs. Provide options to correct the error and/or a retry option for re-running the previous task.
+3.  **Context-Awareness:**
+    *   *Description:* The system should maintain state and context between multiple prompts.
+    *   *Implementation:* Use session data and a memory structure to track generated code snippets, executed actions, and user preferences. This will allow the system to be more context aware and provide more personalized experience.
+
+**Use Cases (Phase 2)**
+
+*   **Data Extraction & Report Generation:** Extract data from web pages or documents, generate reports and summarize the information into readable reports.
+*   **Automated Data Processing:** Process multiple data sources at a given interval.
+*   **Advanced File Management:** Organize and manage files based on specific criteria.
+*   **Web Automation:** Perform complex tasks on the web, such as form filling or data extraction.
+
+### Phase 3 and Beyond: Advanced Capabilities & Ecosystem
+
+**Potential Features:**
+
+1.  **Plugin Architecture:**
+    *   *Description:* Allow users to extend Krya.ai's functionality through custom plugins.
+    *   *Implementation:* Build a plugin system so users can install or create their own custom actions and integrations.
+2.  **GUI Development Assistant:**
+    *   *Description:* Help users to quickly generate GUI interfaces to interact with the automation scripts.
+    *   *Implementation:* Include a UI framework for designing simple GUI interfaces from natural language requests.
+3.  **Cloud Integration:**
+    *   *Description:* Integrate with cloud services for storage, execution, and access.
+    *   *Implementation:* Support for cloud providers (AWS, GCP, Azure) to leverage cloud-based resources for enhanced processing and accessibility.
 
 ## Contributing
 
