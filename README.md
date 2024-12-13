@@ -26,9 +26,11 @@ Krya.ai is an innovative LLM Automation system that empowers you to automate com
   
 ## Demo
 
-[Screencast from 2024-12-12 19-30-55.webm](https://github.com/user-attachments/assets/16032e7a-69c1-4c42-b104-e8f13efa5b01)
 
 [Screencast from 2024-12-12 19-27-37.webm](https://github.com/user-attachments/assets/11e7fe3b-e4fa-480c-a0f4-1c578e87dda3)
+
+[Screencast from 2024-12-12 19-30-55.webm](https://github.com/user-attachments/assets/16032e7a-69c1-4c42-b104-e8f13efa5b01)
+
 
 ## Installations- 
 
