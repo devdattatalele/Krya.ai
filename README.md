@@ -24,8 +24,6 @@ Krya.ai is an innovative LLM Automation system that empowers you to automate com
 *  **Error Handling & Refinement:** A feedback loop allows Krya.ai to learn from errors and refine its code, improving accuracy and efficiency over time.
 *   **Extensible Architecture:** Built to be easily adaptable and extended for future integrations.
   
-## Flow Diagram
-![image](https://github.com/user-attachments/assets/fb76b389-3354-4b96-bed8-14161108150e)
 
 ## Demo
 
@@ -81,6 +79,8 @@ Krya.ai is an innovative LLM Automation system that empowers you to automate com
 4.  Follow the interactive prompts and begin automating your tasks.
 
 ## Workflow
+
+![image](https://github.com/user-attachments/assets/fb76b389-3354-4b96-bed8-14161108150e)
 
 ### Code Execution
 
