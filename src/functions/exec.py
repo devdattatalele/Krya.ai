@@ -4,16 +4,18 @@ import pyautogui
 
 def run_script():
     try:
-        pyautogui.hotkey('win')
+        # Use Command + Space to open Spotlight
+        pyautogui.hotkey('command', 'space')
         time.sleep(1)
-        pyautogui.typewrite('cmd\n', interval=0.1)
-        pyautogui.hotkey('enter')        # Open command prompt (Windows-specific)
+        pyautogui.typewrite('terminal', interval=0.1)
+        pyautogui.press('enter')
         time.sleep(2)
-        pyautogui.hotkey('ctrl','shift','t')
+        # Open new terminal tab
+        pyautogui.hotkey('command', 't')
         time.sleep(2)
         # Run the script
         script_path = os.path.join(os.getcwd(), "src", "generated_output", "generated_output.py")
-        pyautogui.typewrite(f'python "{script_path}"\n', interval=0.01)
+        pyautogui.typewrite(f'python3 "{script_path}"\n', interval=0.01)
 
         return "Script execution initiated. Check the terminal for results."
 
