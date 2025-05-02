@@ -1,6 +1,6 @@
 
 
-<h1 align="center">Krya.ai: LLM Automation System</h1>
+<h1 align="center">Krya.ai: LLM Automation System For Mac OS</h1>
 
 <p align="center">
 
