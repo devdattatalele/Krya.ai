@@ -28,7 +28,7 @@ try:
         time.sleep(5)
 
         # Scroll down for more results (adjust scroll amount as needed)
-        pyautogui.scroll(-500)  # Scroll down
+        pyautogui.scroll(-500)  # Scroll dow
         time.sleep(3)
 
 
