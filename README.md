@@ -11,7 +11,7 @@
 <br>
 
 
-
+For Windows/Linux check out branch at https://github.com/devdattatalele/Krya.ai
 ### Overview
 Krya.ai is an innovative LLM Automation system that empowers you to automate complex tasks on your local machine using the power of Large Language Models (LLMs) like Google Gemini. This initial release focuses on streamlining workflows by generating and executing code, with a sophisticated feedback loop that refines code through error handling and continuous learning.  Think of Krya.ai as your intelligent, automated assistant capable of understanding and executing your instructions directly on your computer.
 <br>
