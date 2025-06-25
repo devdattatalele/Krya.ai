@@ -24,7 +24,7 @@ def configure_model():
         "response_mime_type": "text/plain",
     }
     model = genai.GenerativeModel(
-        model_name="gemini-1.5-pro",
+        model_name="gemini-2.5-flash",
         generation_config=generation_config,
         system_instruction=instruct,
 
