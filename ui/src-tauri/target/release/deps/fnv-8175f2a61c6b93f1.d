@@ -1,0 +1,7 @@
+/Users/dev16/Documents/krya_for_mac/Krya.ai/ui/src-tauri/target/release/deps/libfnv-8175f2a61c6b93f1.rmeta: /Users/dev16/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/fnv-1.0.7/lib.rs
+
+/Users/dev16/Documents/krya_for_mac/Krya.ai/ui/src-tauri/target/release/deps/libfnv-8175f2a61c6b93f1.rlib: /Users/dev16/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/fnv-1.0.7/lib.rs
+
+/Users/dev16/Documents/krya_for_mac/Krya.ai/ui/src-tauri/target/release/deps/fnv-8175f2a61c6b93f1.d: /Users/dev16/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/fnv-1.0.7/lib.rs
+
+/Users/dev16/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/fnv-1.0.7/lib.rs:

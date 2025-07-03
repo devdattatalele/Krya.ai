@@ -1,0 +1,8 @@
+{
+  "api_key": "AIzaSyCvEgjtJcfpJr0ihMA-erNFX-Awdpe6VWQ",
+  "model_name": "gemini-2.5-flash",
+  "temperature": 1.55,
+  "max_output_tokens": 8192,
+  "top_p": 0.95,
+  "top_k": 40
+}

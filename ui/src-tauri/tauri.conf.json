@@ -1,0 +1,118 @@
+{
+  "build": {
+    "beforeDevCommand": "npm run dev",
+    "beforeBuildCommand": "npm run build",
+    "devPath": "http://localhost:1421",
+    "distDir": "../dist",
+    "withGlobalTauri": false
+  },
+  "package": {
+    "productName": "Krya.ai",
+    "version": "0.1.0"
+  },
+  "tauri": {
+    "allowlist": {
+      "all": false,
+      "shell": {
+        "all": false,
+        "open": true,
+        "sidecar": true,
+        "execute": true,
+        "scope": [
+          {
+            "name": "python-server",
+            "cmd": "python3",
+            "args": true
+          },
+          {
+            "name": "python-server-windows",
+            "cmd": "python",
+            "args": true
+          }
+        ]
+      },
+      "window": {
+        "all": false,
+        "close": true,
+        "hide": true,
+        "show": true,
+        "maximize": true,
+        "minimize": true,
+        "setDecorations": true,
+        "setAlwaysOnTop": true,
+        "setSize": true,
+        "setPosition": true,
+        "setTitle": true,
+        "setSkipTaskbar": true,
+        "center": true,
+        "requestUserAttention": true,
+        "setFocus": true,
+        "create": true,
+        "startDragging": true
+      },
+      "dialog": {
+        "all": false,
+        "ask": true,
+        "confirm": true,
+        "message": true
+      },
+      "clipboard": {
+        "all": true
+      },
+      "notification": {
+        "all": true
+      },
+      "http": {
+        "all": true
+      },
+      "globalShortcut": {
+        "all": true
+      },
+      "process": {
+        "all": false,
+        "exit": true,
+        "relaunch": true,
+        "relaunchDangerousAllowSymlinkMacos": false
+      }
+    },
+    "bundle": {
+      "active": true,
+      "targets": "all",
+      "identifier": "ai.krya.app",
+      "icon": [
+        "icons/32x32.png",
+        "icons/128x128.png",
+        "icons/icon.icns",
+        "icons/icon.ico",
+        "icons/icon.png"
+      ],
+      "resources": [
+        "../../src/**/*"
+      ]
+    },
+    "security": {
+      "csp": null
+    },
+    "macOSPrivateApi": true,
+    "windows": [
+      {
+        "fullscreen": false,
+        "height": 120,
+        "resizable": false,
+        "title": "Krya.ai",
+        "width": 600,
+        "decorations": false,
+        "transparent": true,
+        "center": false,
+        "skipTaskbar": false,
+        "label": "main",
+        "alwaysOnTop": true,
+        "titleBarStyle": "Overlay"
+      }
+    ],
+    "systemTray": {
+      "iconPath": "icons/icon.png",
+      "iconAsTemplate": true
+    }
+  }
+} 

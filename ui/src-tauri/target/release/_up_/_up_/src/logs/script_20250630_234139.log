@@ -1,0 +1,6 @@
+Running script with execution ID: 442da354-d25f-4eb3-9167-24bf2e2421f6
+Traceback (most recent call last):
+  File "/var/folders/9r/w0knmrdx06v6l5btcqjkr2zc0000gn/T/tmpvwc_htdw.py", line 42, in <module>
+    with open(script_flag_file, 'w') as ff:
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+FileNotFoundError: [Errno 2] No such file or directory: '/var/folders/9r/w0knmrdx06v6l5btcqjkr2zc0000gn/generated_output/.script_executed'

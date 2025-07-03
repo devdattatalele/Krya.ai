@@ -1,0 +1,638 @@
+:root {
+  --primary-color: #007acc;
+  --primary-hover: #0062a3;
+  --secondary-color: #4c4c4c;
+  --background-color: rgba(30, 30, 30, 0.85);
+  --surface-color: rgba(37, 37, 37, 0.85);
+  --error-color: #e74c3c;
+  --warning-color: #f39c12;
+  --success-color: #2ecc71;
+  --info-color: #3498db;
+  --text-color: #f0f0f0;
+  --text-secondary: #aaaaaa;
+  --border-color: rgba(68, 68, 68, 0.5);
+  --border-radius: 12px;
+  --button-radius: 10px;
+  --shadow: 0 4px 12px rgba(0, 0, 0, 0.5);
+}
+
+/* Global styles for transparent background */
+html, body, #root {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  width: 100%;
+  background: transparent !important;
+  overflow: hidden;
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+  color: var(--text-color);
+}
+
+#root {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 0;
+}
+
+/* Spotlight wrapper - full window draggable area */
+.spotlight-wrapper {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  -webkit-app-region: drag; /* For older Electron compatibility */
+}
+
+/* Spotlight pill container */
+.spotlight-pill {
+  width: 100%;
+  max-width: 600px;
+  height: 60px;
+  background-color: var(--background-color);
+  border-radius: 30px;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.4);
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  position: relative;
+  backdrop-filter: blur(20px) saturate(180%);
+  -webkit-backdrop-filter: blur(20px) saturate(180%);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+/* Content inside the pill */
+.spotlight-content {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  padding: 0 8px;
+  height: 100%;
+}
+
+/* Logo container */
+.logo-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0 8px;
+}
+
+.app-logo {
+  width: 28px;
+  height: 28px;
+  filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.3));
+}
+
+/* Form with prompt input */
+.prompt-form {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  height: 100%;
+}
+
+/* Prompt input field */
+.prompt-input {
+  flex: 1;
+  height: 36px;
+  background: rgba(0, 0, 0, 0.2);
+  border: none;
+  border-radius: 18px;
+  color: var(--text-color);
+  font-size: 15px;
+  padding: 0 16px;
+  margin: 0 8px;
+  outline: none;
+  transition: all 0.2s ease;
+  -webkit-app-region: no-drag; /* Make input interactive */
+}
+
+.prompt-input:focus {
+  background: rgba(0, 0, 0, 0.3);
+  box-shadow: 0 0 0 2px rgba(0, 122, 204, 0.3);
+}
+
+.prompt-input::placeholder {
+  color: var(--text-secondary);
+  opacity: 0.7;
+}
+
+/* Action buttons container */
+.spotlight-actions {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  margin-right: 4px;
+  -webkit-app-region: no-drag; /* Make buttons interactive */
+}
+
+/* Icon buttons (settings, close) */
+.icon-button {
+  background: none;
+  border: none;
+  color: var(--text-secondary);
+  cursor: pointer;
+  width: 28px;
+  height: 28px;
+  border-radius: 14px;
+  padding: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.2s ease;
+  font-size: 14px;
+}
+
+.icon-button:hover {
+  color: var(--text-color);
+  background-color: rgba(255, 255, 255, 0.1);
+}
+
+.icon-button:focus {
+  outline: none;
+  box-shadow: 0 0 0 2px rgba(0, 122, 204, 0.3);
+}
+
+/* Action buttons (run, stop) */
+.action-button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  height: 28px;
+  padding: 0 12px;
+  border: none;
+  border-radius: 14px;
+  font-weight: 500;
+  font-size: 13px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.action-button:focus {
+  outline: none;
+  box-shadow: 0 0 0 2px rgba(255, 255, 255, 0.3);
+}
+
+.action-button:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+.run-button {
+  background-color: var(--primary-color);
+  color: white;
+}
+
+.run-button:hover:not(:disabled) {
+  background-color: var(--primary-hover);
+}
+
+.stop-button {
+  background-color: var(--error-color);
+  color: white;
+}
+
+.stop-button:hover:not(:disabled) {
+  background-color: #c0392b;
+}
+
+/* Connection indicator */
+.connection-indicator {
+  position: absolute;
+  bottom: 8px;
+  right: 8px;
+}
+
+.status-dot {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+}
+
+.status-dot.connected {
+  background-color: var(--success-color);
+  box-shadow: 0 0 4px var(--success-color);
+}
+
+.status-dot.disconnected {
+  background-color: var(--error-color);
+  box-shadow: 0 0 4px var(--error-color);
+}
+
+/* Error banner */
+.error-banner {
+  position: absolute;
+  top: 70px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: calc(100% - 40px);
+  max-width: 600px;
+  background-color: rgba(231, 76, 60, 0.9);
+  color: white;
+  padding: 12px 16px;
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+  z-index: 1000;
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  animation: slideDown 0.3s ease-out;
+}
+
+@keyframes slideDown {
+  from {
+    opacity: 0;
+    transform: translate(-50%, -20px);
+  }
+  to {
+    opacity: 1;
+    transform: translate(-50%, 0);
+  }
+}
+
+.error-message {
+  flex: 1;
+  margin-right: 12px;
+}
+
+.close-button {
+  background: none;
+  border: none;
+  color: white;
+  cursor: pointer;
+  width: 24px;
+  height: 24px;
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.2s ease;
+}
+
+.close-button:hover {
+  background-color: rgba(255, 255, 255, 0.2);
+}
+
+/* Console Panel */
+.console-panel {
+  margin-top: 12px;
+  background-color: var(--surface-color);
+  border-radius: var(--border-radius);
+  overflow: hidden;
+  max-height: 400px;
+  display: flex;
+  flex-direction: column;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+  animation: slideIn 0.3s ease-out;
+  border: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+@keyframes slideIn {
+  from { 
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+  to { 
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.console-header {
+  padding: 12px;
+  background-color: var(--background-color);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 1px solid var(--border-color);
+  border-top-left-radius: var(--border-radius);
+  border-top-right-radius: var(--border-radius);
+}
+
+.console-header h3 {
+  margin: 0;
+  font-size: 16px;
+  font-weight: 500;
+}
+
+.console-actions {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.connection-status {
+  position: absolute;
+  bottom: 10px;
+  right: 10px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 12px;
+  padding: 4px 8px;
+  background-color: rgba(0, 0, 0, 0.3);
+  border-radius: 12px;
+}
+
+.status-indicator {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+}
+
+.status-indicator.connected {
+  background-color: var(--success-color);
+}
+
+.status-indicator.disconnected {
+  background-color: var(--error-color);
+}
+
+.console-content {
+  padding: 12px;
+  overflow-y: auto;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  max-height: 300px;
+  scrollbar-width: thin;
+  scrollbar-color: var(--primary-color) var(--background-color);
+}
+
+.console-content::-webkit-scrollbar {
+  width: 8px;
+}
+
+.console-content::-webkit-scrollbar-track {
+  background: var(--background-color);
+}
+
+.console-content::-webkit-scrollbar-thumb {
+  background-color: var(--border-color);
+  border-radius: 20px;
+}
+
+.empty-logs {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100px;
+  color: var(--text-secondary);
+}
+
+.log-entry {
+  display: flex;
+  align-items: flex-start;
+  padding: 10px;
+  border-radius: 10px;
+  background-color: rgba(0, 0, 0, 0.2);
+  border-left: 3px solid transparent;
+  transition: background-color 0.2s;
+  margin-bottom: 4px;
+}
+
+.log-entry:hover {
+  background-color: rgba(0, 0, 0, 0.3);
+}
+
+.log-entry.info {
+  border-left-color: var(--info-color);
+}
+
+.log-entry.success {
+  border-left-color: var(--success-color);
+}
+
+.log-entry.warning {
+  border-left-color: var(--warning-color);
+}
+
+.log-entry.error {
+  border-left-color: var(--error-color);
+}
+
+.log-icon {
+  margin-right: 8px;
+  flex-shrink: 0;
+}
+
+.log-icon.error {
+  color: var(--error-color);
+}
+
+.log-icon.warning {
+  color: var(--warning-color);
+}
+
+.log-icon.success {
+  color: var(--success-color);
+}
+
+.log-icon.info {
+  color: var(--info-color);
+}
+
+.log-content {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+.log-timestamp {
+  font-size: 12px;
+  color: var(--text-secondary);
+  margin-bottom: 4px;
+}
+
+.log-message {
+  word-break: break-word;
+}
+
+/* Settings */
+.settings-container {
+  background-color: var(--surface-color);
+  border-radius: var(--border-radius);
+  box-shadow: var(--shadow);
+  width: 100%;
+  max-width: 500px;
+  margin: 0 auto;
+  overflow: hidden;
+}
+
+.settings-header {
+  padding: 16px;
+  background-color: var(--background-color);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 1px solid var(--border-color);
+}
+
+.settings-header h2 {
+  margin: 0;
+  font-size: 18px;
+  font-weight: 500;
+}
+
+.settings-content {
+  padding: 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+.setting-group {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.setting-group h3 {
+  margin: 0 0 8px 0;
+  font-size: 16px;
+  font-weight: 500;
+  color: var(--text-secondary);
+}
+
+.setting-item {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.setting-item label {
+  font-size: 14px;
+  font-weight: 500;
+}
+
+.setting-item input,
+.setting-item select {
+  padding: 10px 12px;
+  border: 1px solid var(--border-color);
+  border-radius: 4px;
+  background-color: var(--background-color);
+  color: var(--text-color);
+  font-size: 14px;
+}
+
+.setting-item input:focus,
+.setting-item select:focus {
+  border-color: var(--primary-color);
+  outline: none;
+}
+
+.setting-help {
+  font-size: 12px;
+  color: var(--text-secondary);
+  margin: 0;
+}
+
+.setting-value {
+  font-size: 14px;
+  color: var(--primary-color);
+  margin-left: 8px;
+}
+
+.settings-footer {
+  padding: 16px;
+  background-color: var(--background-color);
+  display: flex;
+  justify-content: flex-end;
+  gap: 12px;
+  border-top: 1px solid var(--border-color);
+}
+
+.cancel-button {
+  padding: 8px 16px;
+  background: none;
+  border: 1px solid var(--border-color);
+  border-radius: 4px;
+  color: var(--text-color);
+  cursor: pointer;
+}
+
+.cancel-button:hover {
+  background-color: rgba(255, 255, 255, 0.1);
+}
+
+.save-button {
+  padding: 8px 16px;
+  background-color: var(--primary-color);
+  border: none;
+  border-radius: 4px;
+  color: white;
+  cursor: pointer;
+}
+
+.save-button:hover {
+  background-color: var(--primary-hover);
+}
+
+.save-button:disabled {
+  background-color: var(--secondary-color);
+  cursor: not-allowed;
+}
+
+/* Success/Error Messages */
+.success-message,
+.error-message {
+  padding: 12px;
+  margin: 12px 16px;
+  border-radius: 4px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.success-message {
+  background-color: rgba(46, 204, 113, 0.2);
+  color: var(--success-color);
+  border: 1px solid var(--success-color);
+}
+
+.error-message {
+  background-color: rgba(231, 76, 60, 0.2);
+  color: var(--error-color);
+  border: 1px solid var(--error-color);
+}
+
+/* Media Queries */
+@media (max-width: 768px) {
+  .spotlight-pill {
+    max-width: 90%;
+    height: 50px;
+  }
+  
+  .prompt-input {
+    height: 32px;
+    font-size: 14px;
+  }
+  
+  .action-button {
+    height: 26px;
+    font-size: 12px;
+  }
+  
+  .console-panel {
+    width: 95%;
+  }
+}
+
+/* Platform-specific fixes */
+@supports not (backdrop-filter: blur(20px)) {
+  /* Fallback for browsers that don't support backdrop-filter */
+  .spotlight-pill {
+    background-color: rgba(30, 30, 30, 0.95);
+  }
+  
+  .error-banner {
+    background-color: rgba(231, 76, 60, 0.95);
+  }
+} 

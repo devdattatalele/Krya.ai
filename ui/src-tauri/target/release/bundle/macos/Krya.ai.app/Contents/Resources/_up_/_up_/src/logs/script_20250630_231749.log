@@ -1,0 +1,6 @@
+Running script with execution ID: 2a730b8a-343c-49ac-b0ee-0a91551d0d98
+Traceback (most recent call last):
+  File "/var/folders/9r/w0knmrdx06v6l5btcqjkr2zc0000gn/T/tmpzswyd5xj.py", line 42, in <module>
+    with open(script_flag_file, 'w') as ff:
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+FileNotFoundError: [Errno 2] No such file or directory: '/var/folders/9r/w0knmrdx06v6l5btcqjkr2zc0000gn/generated_output/.script_executed'
