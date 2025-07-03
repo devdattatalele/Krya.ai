@@ -1,0 +1,5 @@
+Traceback (most recent call last):
+  File "/Users/dev16/Documents/krya_for_mac/Krya.ai/src/generated_output/generated_output.py", line 21, in <module>
+    time.sleep(2)  # Give time for the new document window to appear
+    ^^^^^^^^^^^^^
+KeyboardInterrupt

@@ -1,38 +1,29 @@
 import pyautogui
 import time
-import pyperclip
 
 try:
-    # Open Chrome
-    pyautogui.hotkey('command', 'space')
-    time.sleep(2)
-    pyautogui.write('Chrome')
-    time.sleep(2)
+    # Open Spotlight
+    pyautogui.keyDown('command')
+    pyautogui.press('space')
+    pyautogui.keyUp('command')
+    time.sleep(1)
+
+    # Type "TextEdit" and press Enter to open the application
+    pyautogui.write('TextEdit', interval=0.1)
     pyautogui.press('enter')
-    time.sleep(5)
-    pyautogui.hotkey('command', 't')
-    time.sleep(2)
+    time.sleep(2)  # Give TextEdit time to open
 
-    # Define websites and search term
-    websites = {
-        "Amazon": "https://www.amazon.in/s?k=phones+under+20000",
-        "Flipkart": "https://www.flipkart.com/search?q=phones+under+20000&otracker=search&otracker1=search&marketplace=FLIPKART&as-show=on&as=off",
-    }
-    search_term = "phones under 20000"
+    # Check if a new document is already open or create a new one (Command + N)
+    # This might depend on TextEdit's last state, so opening a new one is safer
+    pyautogui.keyDown('command')
+    pyautogui.press('n')
+    pyautogui.keyUp('command')
+    time.sleep(1) # Give time for the new document window to appear
 
-
-    for website_name, url in websites.items():
-        pyperclip.copy(url)
-        pyautogui.hotkey('command', 'v')
-        pyautogui.press('enter')
-        time.sleep(5)
-
-        # Scroll down for more results (adjust scroll amount as needed)
-        pyautogui.scroll(-500)  # Scroll dow
-        time.sleep(3)
-
-
-
+    # Type the desired text
+    pyautogui.write('y0oooihTextEdit', interval=0.01)
 
 except Exception as e:
     print(f"An error occurred: {e}")
+    print("Please ensure PyAutoGUI is installed and accessibility permissions are granted for your terminal/IDE.")
+    print("Also, make sure TextEdit is installed on your system.")

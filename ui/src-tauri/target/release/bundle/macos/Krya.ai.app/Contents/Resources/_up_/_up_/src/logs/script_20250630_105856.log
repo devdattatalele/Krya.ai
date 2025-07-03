@@ -1,0 +1,18 @@
+Traceback (most recent call last):
+  File "/Users/dev16/Documents/krya_for_mac/Krya.ai/src/generated_output/generated_output.py", line 21, in <module>
+    pyautogui.typewrite('devdatta', interval=0.01)
+  File "/Library/Frameworks/Python.framework/Versions/3.12/lib/python3.12/site-packages/pyautogui/__init__.py", line 594, in wrapper
+    returnVal = wrappedFunction(*args, **kwargs)
+                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Library/Frameworks/Python.framework/Versions/3.12/lib/python3.12/site-packages/pyautogui/__init__.py", line 1685, in typewrite
+    press(c, _pause=False)
+  File "/Library/Frameworks/Python.framework/Versions/3.12/lib/python3.12/site-packages/pyautogui/__init__.py", line 594, in wrapper
+    returnVal = wrappedFunction(*args, **kwargs)
+                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Library/Frameworks/Python.framework/Versions/3.12/lib/python3.12/site-packages/pyautogui/__init__.py", line 1615, in press
+    platformModule._keyUp(k)
+  File "/Library/Frameworks/Python.framework/Versions/3.12/lib/python3.12/site-packages/pyautogui/_pyautogui_osx.py", line 235, in _keyUp
+    _normalKeyEvent(key, 'up')
+  File "/Library/Frameworks/Python.framework/Versions/3.12/lib/python3.12/site-packages/pyautogui/_pyautogui_osx.py", line 256, in _normalKeyEvent
+    time.sleep(pyautogui.DARWIN_CATCH_UP_TIME)
+KeyboardInterrupt
