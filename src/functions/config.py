@@ -110,10 +110,9 @@ def configure_model() -> genai.GenerativeModel:
     
     # Create and return model
     model = genai.GenerativeModel(
-        model_name=config.get("model_name", DEFAULT_CONFIG["model_name"]),
+        model_name="gemini-2.5-flash",
         generation_config=generation_config,
         system_instruction=instruct,
     )
-    
-    logger.info(f"Model configured: {config.get('model_name', DEFAULT_CONFIG['model_name'])}")
+
     return model
