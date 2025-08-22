@@ -165,7 +165,7 @@ We welcome contributions! If you have any ideas for features or improvements, fe
 
 ## License
 
-This project is licensed under the [Insert License Name Here] License.
+This project is licensed under the MIT License. See the [LICENSE.md](https://github.com/devdattatalele/Krya.ai/blob/master/LICENSE.md) file for details.
 
 ## Future Enhancements
 
