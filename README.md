@@ -32,8 +32,25 @@ Krya.ai is an innovative LLM Automation system that empowers you to automate com
 
 [Screencast from 2024-12-12 19-30-55.webm](https://github.com/user-attachments/assets/16032e7a-69c1-4c42-b104-e8f13efa5b01)
 
+## ⚠️ Important Notice
+
+**Before installing, please review:**
+- 🔴 **[API_KEY_SECURITY_ALERT.md](API_KEY_SECURITY_ALERT.md)** - Critical security issue requiring immediate attention
+- 📘 **[SETUP.md](SETUP.md)** - Complete installation guide with platform-specific instructions
+- 🔒 **[SECURITY.md](SECURITY.md)** - Security best practices and considerations
+- 🛠️ **[TROUBLESHOOTING.md](TROUBLESHOOTING.md)** - Solutions for common problems
+
+**Quick Links:**
+- [Known Issues](KNOWN_ISSUES.md) - 27 identified issues and their solutions
+- [Quick Reference](ISSUES_SUMMARY.md) - Overview of all issues and documentation
 
 ## Installations- 
+
+> **Note:** The instructions below are for the legacy Streamlit version. For the current Tauri + FastAPI version, please see **[SETUP.md](SETUP.md)** for complete setup instructions.
+
+### Quick Start (Recommended)
+
+For detailed, platform-specific setup instructions, see **[SETUP.md](SETUP.md)**.
 
 ### Prerequisites
 
@@ -161,7 +178,25 @@ Krya.ai is an innovative LLM Automation system that empowers you to automate com
 
 ## Contributing
 
-We welcome contributions! If you have any ideas for features or improvements, feel free to create pull requests.
+We welcome contributions! Please read our [CONTRIBUTING.md](CONTRIBUTING.md) for guidelines on:
+- Code style and standards
+- Development setup
+- Submitting pull requests
+- Testing requirements
+- Documentation standards
+
+If you find any issues, please check [KNOWN_ISSUES.md](KNOWN_ISSUES.md) first, then create a GitHub issue if it's not already documented.
+
+## Documentation
+
+- **[SETUP.md](SETUP.md)** - Complete installation and setup guide
+- **[TROUBLESHOOTING.md](TROUBLESHOOTING.md)** - Solutions for common problems
+- **[KNOWN_ISSUES.md](KNOWN_ISSUES.md)** - Comprehensive list of known issues
+- **[ISSUES_SUMMARY.md](ISSUES_SUMMARY.md)** - Quick reference for all documentation
+- **[SECURITY.md](SECURITY.md)** - Security policy and best practices
+- **[CONTRIBUTING.md](CONTRIBUTING.md)** - Contributing guidelines
+- **[BUILD_INSTRUCTIONS.md](BUILD_INSTRUCTIONS.md)** - Building from source
+- **[API_KEY_SECURITY_ALERT.md](API_KEY_SECURITY_ALERT.md)** - Critical security alert
 
 ## License
 
