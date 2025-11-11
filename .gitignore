@@ -1,6 +1,62 @@
 src/backend
 .env
 
+# Configuration files with sensitive data
+src/config/config.json
+config/config.json
+**/config/config.json
+
+# Python
 __pycache__/
 *.py[cod]
 *$py.class
+*.so
+*.egg
+*.egg-info/
+dist/
+build/
+*.pyc
+.pytest_cache/
+.coverage
+htmlcov/
+
+# Virtual environments
+venv/
+env/
+ENV/
+.venv
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+.DS_Store
+
+# Logs
+logs/
+*.log
+generated_output/
+.execution_in_progress
+.script_executed
+.last_run_timestamp
+
+# Node
+node_modules/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# Rust/Tauri
+target/
+Cargo.lock
+
+# Build artifacts
+dist/
+*.dmg
+*.app
+*.exe
+*.msi
+*.AppImage
+*.deb
